@@ -14,9 +14,14 @@ import FooterB from "./components/Footer/Footer";
 import EditP from "./pages/EditProduct/EditP";
 import Facture from "./pages/Facture.js/Facture";
 import FactureA from "./pages/adminF/FactureA";
+import { current } from "./JS/ACTIONS/actions";
 function App() {
   const user = useSelector(state => state.user.user);
- 
+ useEffect(()=>{
+  const teste=async()=>{
+    
+  }
+ })
   return (
     <div className="App">
       
@@ -31,7 +36,10 @@ function App() {
         <Route path="/productData/:_id" element={<Test />} />
         <Route path="/editproduct/:_id" element={<EditP />} />
         <Route path="/facture" element={<Facture/>} />
-        <Route path="/facture/admin" element={<FactureA />} />
+        {user && user.prefileges === "Admin" ?(
+  <Route path="/facture/admin" element={<FactureA />} />
+):null}
+
       </Routes>
       
         <ToastContainer
