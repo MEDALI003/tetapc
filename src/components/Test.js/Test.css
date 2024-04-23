@@ -1,0 +1,66 @@
+.contain-all {
+    display: flex;
+    justify-content: center;
+    height: auto; /* Set the height of the container to the full viewport height */
+    background-color: whitesmoke;
+    margin-top: 25px;
+}
+
+.image-holder {
+    border-radius: 10px;
+    height: auto;
+    width: 90%; /* Adjusted width for responsiveness */
+    max-width: 500px; /* Set maximum width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.image-holder img {
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.prod-data {
+    border-radius: 20px;
+    height: auto;
+    width: auto; /* Adjusted width for responsiveness */
+    max-width: 500px; /* Set maximum width */
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    color: white;
+    padding-left: 20px;
+    border: 1px solid white;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+    .contain-all {
+        height: auto; /* Allow container height to adjust dynamically */
+    }
+
+    .image-holder,
+    .prod-data {
+        width: 90%; /* Adjusted width for smaller screens */
+        height: auto;
+    }
+}
+
+.number-input {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.input-field {
+    width: 100%; /* Make input field width responsive */
+    height: 1cm;
+}
+
+.add-to-basket-button {
+    margin-right: 10px; /* Adjust margin as needed */
+}
