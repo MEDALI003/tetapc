@@ -31,7 +31,7 @@ function App() {
         <Route path="/productData/:_id" element={<Test />} />
         <Route path="/editproduct/:_id" element={<EditP />} />
         <Route path="/facture" element={<Facture/>} />
-        {<Route path="/facture/admin" element={<FactureA />} />}
+        <Route path="/facture/admin" element={<FactureA />} />
       </Routes>
       
         <ToastContainer

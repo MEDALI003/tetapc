@@ -2,10 +2,23 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch ,useSelector } from 'react-redux'
 import { getbasket} from '../../JS/ACTIONS/basketActions'
 import Navb from "../../components/Navbar/Navb"
+import { useNavigate } from 'react-router-dom'
 const FactureA = () => {
+  const user=useSelector(state=>state.user.user)
     const dispatch=useDispatch()
+    const Navigate =useNavigate()
     const basket=useSelector(state=>state.basket.basket)
     const fix=0
+    useEffect(()=>{
+      if (user) {
+        if (user.pregileges!=="Admin") {
+          Navigate("/")
+        }
+      }
+      else if(!user){
+        Navigate("/")
+      }
+    })
     useEffect(()=>{
       const getbaskete=async()=>{
         await dispatch(getbasket())
