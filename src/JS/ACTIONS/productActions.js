@@ -14,7 +14,7 @@ export const REMOVE_BASKET="remove from basket"
 export const addProduct=(product)=>async(dispatch)=>{
     dispatch({type:LOAD_PRODUCT})
 try {
-    let result=await axios.post("https://back-end-1-txcx.onrender.com/api/product/addproduct",product)
+    let result=await axios.post("https://back-end-2-txcx.onrender.com/api/product/addproduct",product)
     dispatch({type:ADD_PRODUCT})
 } catch (error) {
     dispatch({type:FAIL_PRODUCT,payload:error})
@@ -24,7 +24,7 @@ try {
 export const modify=(price,_id)=>async(dispatch)=>{
 dispatch({type:LOAD_PRODUCT})
 try {
-let result= await axios.put(`https://back-end-1-txcx.onrender.com/api/product/updateproduct/${_id}`,{price})
+let result= await axios.put(`https://back-end-2-txcx.onrender.com/api/product/updateproduct/${_id}`,{price})
 dispatch({type:MODIFY})
 } catch (error) {
 dispatch({type:FAIL_PRODUCT,payload:error})
